@@ -14,13 +14,13 @@ public class WelcomeController {
     @GetMapping(value="/")
     public String getWelcomeString() {
         
-        return "Hello, welcome to our Pizzeria!";
+        return "Hello, welcome to our Game Shop!";
     }
 
     @GetMapping(value="/user")
     public String getUserRole(Authentication auth) {
         UserDetails userDetails = (UserDetails) auth.getPrincipal();
-        String role = userDetails.getAuthorities().toArray()[1].toString();
+        String role = userDetails.getAuthorities().toArray()[0].toString();
         return role;
     }
 
